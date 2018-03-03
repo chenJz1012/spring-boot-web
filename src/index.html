@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ACE_UI</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <!-- jQuery UI -->
+    <link href="cdn/vendors/jquery-ui/jquery-ui.min.css" rel="stylesheet" media="screen">
+    <!-- Bootstrap -->
+    <link href="cdn/vendors/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="cdn/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- ace styles -->
+    <link rel="stylesheet" href="cdn/vendors/ace/css/ace.min.css" class="ace-main-stylesheet" id="main-ace-style"/>
+
+    <!--[if lte IE 9]>
+    <link rel="stylesheet" href="cdn/vendors/ace/css/ace-part2.min.css" class="ace-main-stylesheet"/>
+    <![endif]-->
+    <link rel="stylesheet" href="cdn/vendors/ace/css/ace-skins.min.css"/>
+    <link rel="stylesheet" href="cdn/vendors/ace/css/ace-rtl.min.css"/>
+
+    <!--[if lte IE 9]>
+    <link rel="stylesheet" href="cdn/vendors/ace/css/ace-ie.min.css"/>
+    <![endif]-->
+
+    <!-- ace settings handler -->
+    <script src="cdn/vendors/ace/js/ace-extra.min.js"></script>
+    <!--[if lte IE 8]>
+    <script src="cdn/vendors/html5shiv/dist/html5shiv.js"></script>
+    <script src="cdn/vendors/respond/dest/respond.min.js"></script>
+    <![endif]-->
+
+    <link href="cdn/vendors/datatables/dataTables.bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="cdn/vendors/bootstrap-modal/css/bootstrap-modal.css" rel="stylesheet" media="screen">
+    <link href="cdn/vendors/bootstrap-modal/css/bootstrap-modal-bs3patch.css" rel="stylesheet" media="screen">
+    <link href="cdn/vendors/bootstrap-fileinput/bootstrap-fileinput.css" rel="stylesheet" media="screen">
+    <link href="cdn/vendors/jquery-file-upload/css/jquery.fileupload.css" rel="stylesheet" media="screen">
+    <link href="cdn/vendors/jquery-file-upload/css/jquery.fileupload-ui.css" rel="stylesheet" media="screen">
+    <link href="cdn/vendors/zTree/css/zTreeStyle/zTreeStyle.css" rel="stylesheet" media="screen">
+    <link href="cdn/vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet" media="screen">
+    <link href="cdn/vendors/select2/css/select2.css" rel="stylesheet">
+    <link rel="stylesheet" href="cdn/vendors/kindeditor/themes/default/default.css"/>
+    <link href="cdn/vendors/code-mirror/codemirror.css" rel="stylesheet">
+    <!-- styles -->
+    <link href="css/index.css" rel="stylesheet">
+</head>
+<body class="no-skin">
+<div id="navbar" class="navbar navbar-default  ace-save-state">
+    <div class="navbar-container ace-save-state" id="navbar-container">
+        <button type="button" class="navbar-toggle menu-toggler pull-left" id="menu-toggler">
+            <span class="sr-only">Toggle sidebar</span>
+
+            <span class="icon-bar"></span>
+
+            <span class="icon-bar"></span>
+
+            <span class="icon-bar"></span>
+        </button>
+
+
+        <div class="navbar-header pull-left">
+            <a href="index.html" class="navbar-brand">
+                <small>
+                    <i class="fa fa-leaf"></i>
+                    Ace Admin
+                </small>
+            </a>
+        </div>
+
+        <div class="navbar-buttons navbar-header pull-right" role="navigation">
+            <ul class="nav ace-nav">
+                <li class="green dropdown-modal">
+                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                        <i class="ace-icon fa fa-envelope icon-animated-vertical"></i>
+                        <span class="badge badge-success">5</span>
+                    </a>
+
+                    <ul class="dropdown-menu-right dropdown-navbar dropdown-menu dropdown-caret dropdown-close">
+                        <li class="dropdown-header">
+                            <i class="ace-icon fa fa-envelope-o"></i>
+                            1 Messages
+                        </li>
+                        <li class="dropdown-content">
+                            <ul class="dropdown-menu dropdown-navbar">
+                                <li>
+                                    <a href="#" class="clearfix">
+                                        <img src="cdn/img/128.png" class="msg-photo"
+                                             alt="Alex's Avatar"/>
+                                        <span class="msg-body">
+													<span class="msg-title">
+														<span class="blue">Alex:</span>
+														Ciao sociis natoque penatibus et auctor ...
+													</span>
+
+													<span class="msg-time">
+														<i class="ace-icon fa fa-clock-o"></i>
+														<span>a moment ago</span>
+													</span>
+												</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown-footer">
+                            <a href="inbox.html">
+                                See all messages
+                                <i class="ace-icon fa fa-arrow-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="light-blue dropdown-modal">
+                    <a data-toggle="dropdown" href="#" class="dropdown-toggle">
+                        <span class="user-info">
+									<small>欢迎,</small><span id="spring_login_user_name">用户</span>
+                        </span>
+                        <i class="ace-icon fa fa-caret-down"></i>
+                    </a>
+
+                    <ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
+                        <li>
+                            <a href="#">
+                                <i class="ace-icon fa fa-cog"></i>
+                                Settings
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="profile.html">
+                                <i class="ace-icon fa fa-user"></i>
+                                Profile
+                            </a>
+                        </li>
+
+                        <li class="divider"></li>
+
+                        <li>
+                            <a id="logout" href="javascript:void(0);">
+                                <i class="ace-icon fa fa-power-off"></i>退出登录
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div><!-- /.navbar-container -->
+</div>
+
+<div class="main-container ace-save-state" id="main-container">
+
+    <div class="main-content">
+        <div class="main-content-inner">
+            <div class="breadcrumbs ace-save-state" id="breadcrumbs">
+                <ul id="breadcrumb" class="breadcrumb">
+
+                </ul><!-- /.breadcrumb -->
+            </div>
+
+            <div class="page-content">
+                <div class="ace-settings-container" id="ace-settings-container">
+                    <div class="btn btn-app btn-xs btn-warning ace-settings-btn" id="ace-settings-btn">
+                        <i class="ace-icon fa fa-cog bigger-130"></i>
+                    </div>
+
+                    <div class="ace-settings-box clearfix" id="ace-settings-box">
+                        <div>
+                            <div class="ace-settings-item">
+                                <div class="pull-left">
+                                    <select id="skin-colorpicker" class="hide">
+                                        <option data-skin="no-skin" value="#438EB9">#438EB9</option>
+                                        <option data-skin="skin-1" value="#222A2D">#222A2D</option>
+                                        <option data-skin="skin-2" value="#C6487E">#C6487E</option>
+                                        <option data-skin="skin-3" value="#D0D0D0">#D0D0D0</option>
+                                    </select>
+                                </div>
+                                <span>&nbsp;换UI皮肤</span>
+                            </div>
+
+                            <div class="ace-settings-item">
+                                <input type="checkbox" class="ace ace-checkbox-2 ace-save-state"
+                                       id="orange-settings-navbar"/>
+                                <label class="lbl" for="orange-settings-navbar"> 切换横竖导航</label>
+                            </div>
+                        </div><!-- /.pull-left -->
+                    </div><!-- /.ace-settings-box -->
+                </div><!-- /.ace-settings-container -->
+
+                <div class="page-header">
+                    <h1 id="main-title">
+
+                    </h1>
+                </div><!-- /.page-header -->
+
+                <div class="row">
+                    <div class="col-xs-12" id="main-body"></div>
+                </div>
+            </div><!-- /.page-content -->
+        </div>
+    </div><!-- /.main-content -->
+
+    <div class="footer">
+        <div class="footer-inner">
+            <div class="footer-content">
+                <span class="bigger-120">
+                    <span class="blue bolder">Ace</span>
+                    Application &copy; 2013-2014
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
+        <i class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>
+    </a>
+</div><!-- /.main-container -->
+
+<!-- Custom Theme JavaScript -->
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="cdn/vendors/jquery/dist/jquery.js"></script>
+<script src="cdn/vendors/bootstrap/js/bootstrap.min.js"></script>
+<script src="cdn/vendors/jquery-ui/jquery-ui.min.js"></script>
+<!-- ace scripts -->
+<script src="cdn/vendors/ace/js/ace-elements.min.js"></script>
+<script src="cdn/vendors/ace/js/ace.min.js"></script>
+
+<script src="cdn/vendors/jquery.tmpl.min.js"></script>
+<script src="cdn/vendors/moment.js"></script>
+<script src="cdn/vendors/ajaxfileupload.js"></script>
+<script src="cdn/vendors/jquery.cookie/jquery.cookie.js"></script>
+<script src="cdn/vendors/bootbox.js"></script>
+<script src="cdn/vendors/jquery-validation/jquery.validate.js"></script>
+<script src="cdn/vendors/jquery-validation/additional-methods.js"></script>
+<script src="cdn/vendors/block-ui/jquery.blockUI.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="cdn/vendors/datatables/js/jquery.dataTables.min.js"></script>
+<script src="cdn/vendors/bootstrap-modal/js/bootstrap-modalmanager.js"></script>
+<script src="cdn/vendors/bootstrap-modal/js/bootstrap-modal.js"></script>
+<script src="cdn/vendors/bootstrap-fileinput/bootstrap-fileinput.js"></script>
+<script src="cdn/vendors/jquery-file-upload/js/jquery.fileupload.js"></script>
+<script src="cdn/vendors/jquery-file-upload/js/jquery.fileupload-jquery-ui.js"></script>
+<script src="cdn/vendors/zTree/js/jquery.ztree.core-3.5.min.js"></script>
+<script src="cdn/vendors/zTree/js/jquery.ztree.excheck-3.5.min.js"></script>
+<script src="cdn/vendors/zTree/js/jquery.ztree.exedit-3.5.min.js"></script>
+<script src="cdn/vendors/kindeditor/kindeditor-min.js"></script>
+<script charset="utf-8" src="cdn/vendors/kindeditor/lang/zh_CN.js"></script>
+<script src="cdn/vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
+<script src="cdn/vendors/select2/js/select2.min.js"></script>
+<script src="cdn/vendors/bootstrap-contextmenu/bootstrap-contextmenu.js"></script>
+<script src="cdn/vendors/echarts.min.js?v=1"></script>
+<script src="cdn/vendors/jquery.timers/jquery.timers.min.js"></script>
+<script src="cdn/vendors/code-mirror/codemirror.js"></script>
+<script src="cdn/vendors/code-mirror/javascript.js"></script>
+<script src="cdn/vendors/json2.js"></script>
+
+<script src="js/app.js"></script>
+<script src="js/orange-plugins/orange-modal.js"></script>
+<script src="js/orange-plugins/orange-grid.js"></script>
+<script src="js/orange-plugins/orange-form.js"></script>
+<script src="js/orange-plugins/orange-file-managers.js"></script>
+<script src="js/orange-plugins/orange-tab.js"></script>
+<script src="js/orange-plugins/orange-layout.js"></script>
+<script src="js/orange-plugins/orange-board.js"></script>
+<script src="js/orange-plugins/orange-board-view.js"></script>
+<script src="js/nav.js"></script>
+<script src="js/index.js"></script>
+<script src="js/security/user.js"></script>
+<script src="js/security/role.js"></script>
+<script src="js/security/function.js"></script>
+<script src="js/core/common-query.js"></script>
+<script src="js/core/export-task.js"></script>
+<script src="js/core/board.js"></script>
+<script src="js/core/dataset.js"></script>
+<script src="js/core/example.js"></script>
+
+
+<script type="text/javascript">
+    bootbox.setLocale("zh_CN");
+    $.fn.modal.Constructor.prototype.enforceFocus = function () {
+    };
+    $("#logout").on("click", function () {
+        $.ajax(
+            {
+                type: 'GET',
+                url: App.href + "/api/token/logout",
+                contentType: "application/json",
+                dataType: "json",
+                success: function (result) {
+                    if (result.code === 200) {
+                        $.cookie(App.token_key, null);
+                        window.location.href = App.href + "/login.html";
+                    } else {
+                        alert(result.message);
+                    }
+                }
+            }
+        );
+    });
+
+</script>
+</body>
+</html>

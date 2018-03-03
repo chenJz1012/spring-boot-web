@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <title>ACE_UI</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <!-- jQuery UI -->
+    <link href="cdn/vendors/jquery-ui/jquery-ui.min.css" rel="stylesheet" media="screen">
+    <!-- Bootstrap -->
+    <link href="cdn/vendors/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="cdn/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- ace styles -->
+    <link rel="stylesheet" href="cdn/vendors/ace/css/ace.min.css" class="ace-main-stylesheet" id="main-ace-style"/>
+
+    <!--[if lte IE 9]>
+    <link rel="stylesheet" href="cdn/vendors/ace/css/ace-part2.min.css" class="ace-main-stylesheet"/>
+    <![endif]-->
+    <link rel="stylesheet" href="cdn/vendors/ace/css/ace-skins.min.css"/>
+    <link rel="stylesheet" href="cdn/vendors/ace/css/ace-rtl.min.css"/>
+
+    <!--[if lte IE 9]>
+    <link rel="stylesheet" href="cdn/vendors/ace/css/ace-ie.min.css"/>
+    <![endif]-->
+
+    <!-- ace settings handler -->
+    <script src="cdn/vendors/ace/js/ace-extra.min.js"></script>
+    <!--[if lte IE 8]>
+    <script src="cdn/vendors/html5shiv/dist/html5shiv.js"></script>
+    <script src="cdn/vendors/respond/dest/respond.min.js"></script>
+    <![endif]-->
+
+
+    <!-- styles -->
+    <link href="css/index.css" rel="stylesheet">
+</head>
+<body class="login-layout light-login">
+<div class="main-container">
+    <div class="main-content">
+        <div class="row">
+            <div class="col-sm-10 col-sm-offset-1">
+                <div class="login-container">
+                    <div class="center">
+                        <h1>
+                            <i class="ace-icon fa fa-leaf green"></i>
+                            <span class="red">Ace</span>
+                            <span class="grey">Application</span>
+                        </h1>
+                        <h4 class="blue">&copy; Company Name</h4>
+                    </div>
+
+                    <div class="space-6"></div>
+
+                    <div class="position-relative">
+                        <div id="login-box" class="login-box visible widget-box no-border">
+                            <div class="widget-body">
+                                <div class="widget-main">
+                                    <h4 class="header blue lighter bigger">
+                                        <i class="ace-icon fa fa-coffee green"></i>
+                                        请填写登录信息
+                                    </h4>
+
+                                    <div class="space-6"></div>
+
+                                    <form id="login-form">
+                                        <fieldset>
+                                            <label class="block clearfix">
+														<span class="block input-icon input-icon-right">
+															<input type="text" class="form-control" name="username"
+                                                                   tabindex="1"
+                                                                   id="username" placeholder="username"/>
+															<i class="ace-icon fa fa-user"></i>
+														</span>
+                                            </label>
+
+                                            <label class="block clearfix">
+														<span class="block input-icon input-icon-right">
+															<input type="password" name="password" id="password"
+                                                                   tabindex="2"
+                                                                   class="form-control"
+                                                                   placeholder="password"/>
+															<i class="ace-icon fa fa-lock"></i>
+														</span>
+                                            </label>
+
+                                            <div class="space"></div>
+
+                                            <div class="clearfix">
+                                                <div class="row">
+                                                    <div class="col-sm-6">
+                                                        <a id="captcha_a" title="看不清,换一张" href="javascript:void(0);">
+                                                            <img id="captcha_img" src="" alt="努力加载中..."
+                                                                 style="width:100%;height:34px;border: 1px solid #e5e5e5;"/>
+                                                        </a>
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <input type="text" name="vcode" id="vcode" tabindex="3"
+                                                               class="form-control" placeholder="验证码">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="space"></div>
+
+                                            <div class="clearfix">
+
+                                                <button type="button" name="login-submit" id="login_btn" tabindex="4"
+                                                        class="width-35 pull-right btn btn-sm btn-primary">
+                                                    <i class="ace-icon fa fa-key"></i>
+                                                    <span class="bigger-110">登录</span>
+                                                </button>
+                                            </div>
+                                            <div class="space-4"></div>
+                                        </fieldset>
+                                    </form>
+                                </div><!-- /.widget-main -->
+
+                                <div class="toolbar clearfix">
+                                    <div>
+                                        <a href="#" data-target="#forgot-box" class="forgot-password-link">
+                                            <i class="ace-icon fa fa-arrow-left"></i>
+                                            忘记密码
+                                        </a>
+                                    </div>
+
+                                    <div>
+                                        <a href="#" data-target="#signup-box" class="user-signup-link">
+                                            注册账号
+                                            <i class="ace-icon fa fa-arrow-right"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div><!-- /.widget-body -->
+                        </div><!-- /.login-box -->
+
+                        <div id="forgot-box" class="forgot-box widget-box no-border">
+                            <div class="widget-body">
+                                <div class="widget-main">
+                                    <h4 class="header red lighter bigger">
+                                        <i class="ace-icon fa fa-key"></i>
+                                        Retrieve Password
+                                    </h4>
+
+                                    <div class="space-6"></div>
+                                    <p>
+                                        Enter your email and to receive instructions
+                                    </p>
+
+                                    <form>
+                                        <fieldset>
+                                            <label class="block clearfix">
+														<span class="block input-icon input-icon-right">
+															<input type="email" class="form-control"
+                                                                   placeholder="Email"/>
+															<i class="ace-icon fa fa-envelope"></i>
+														</span>
+                                            </label>
+
+                                            <div class="clearfix">
+                                                <button type="button" class="width-35 pull-right btn btn-sm btn-danger">
+                                                    <i class="ace-icon fa fa-lightbulb-o"></i>
+                                                    <span class="bigger-110">Send Me!</span>
+                                                </button>
+                                            </div>
+                                        </fieldset>
+                                    </form>
+                                </div><!-- /.widget-main -->
+
+                                <div class="toolbar center">
+                                    <a href="#" data-target="#login-box" class="back-to-login-link">
+                                        Back to login
+                                        <i class="ace-icon fa fa-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div><!-- /.widget-body -->
+                        </div><!-- /.forgot-box -->
+
+                        <div id="signup-box" class="signup-box widget-box no-border">
+                            <div class="widget-body">
+                                <div class="widget-main">
+                                    <h4 class="header green lighter bigger">
+                                        <i class="ace-icon fa fa-users blue"></i>
+                                        New User Registration
+                                    </h4>
+
+                                    <div class="space-6"></div>
+                                    <p> Enter your details to begin: </p>
+
+                                    <form>
+                                        <fieldset>
+                                            <label class="block clearfix">
+														<span class="block input-icon input-icon-right">
+															<input type="email" class="form-control"
+                                                                   placeholder="Email"/>
+															<i class="ace-icon fa fa-envelope"></i>
+														</span>
+                                            </label>
+
+                                            <label class="block clearfix">
+														<span class="block input-icon input-icon-right">
+															<input type="text" class="form-control"
+                                                                   placeholder="Username"/>
+															<i class="ace-icon fa fa-user"></i>
+														</span>
+                                            </label>
+
+                                            <label class="block clearfix">
+														<span class="block input-icon input-icon-right">
+															<input type="password" class="form-control"
+                                                                   placeholder="Password"/>
+															<i class="ace-icon fa fa-lock"></i>
+														</span>
+                                            </label>
+
+                                            <label class="block clearfix">
+														<span class="block input-icon input-icon-right">
+															<input type="password" class="form-control"
+                                                                   placeholder="Repeat password"/>
+															<i class="ace-icon fa fa-retweet"></i>
+														</span>
+                                            </label>
+
+                                            <label class="block">
+                                                <input type="checkbox" class="ace"/>
+                                                <span class="lbl">
+															I accept the
+															<a href="#">User Agreement</a>
+														</span>
+                                            </label>
+
+                                            <div class="space-24"></div>
+
+                                            <div class="clearfix">
+                                                <button type="reset" class="width-30 pull-left btn btn-sm">
+                                                    <i class="ace-icon fa fa-refresh"></i>
+                                                    <span class="bigger-110">Reset</span>
+                                                </button>
+
+                                                <button type="button"
+                                                        class="width-65 pull-right btn btn-sm btn-success">
+                                                    <span class="bigger-110">Register</span>
+
+                                                    <i class="ace-icon fa fa-arrow-right icon-on-right"></i>
+                                                </button>
+                                            </div>
+                                        </fieldset>
+                                    </form>
+                                </div>
+
+                                <div class="toolbar center">
+                                    <a href="#" data-target="#login-box" class="back-to-login-link">
+                                        <i class="ace-icon fa fa-arrow-left"></i>
+                                        Back to login
+                                    </a>
+                                </div>
+                            </div><!-- /.widget-body -->
+                        </div><!-- /.signup-box -->
+                    </div><!-- /.position-relative -->
+
+                </div>
+            </div><!-- /.col -->
+        </div><!-- /.row -->
+    </div><!-- /.main-content -->
+</div><!-- /.main-container -->
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="cdn/vendors/jquery/dist/jquery.js"></script>
+<script src="cdn/vendors/jquery.cookie/jquery.cookie.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="cdn/vendors/bootstrap/js/bootstrap.min.js"></script>
+<script src="cdn/vendors/jquery.tmpl.min.js"></script>
+<script src="cdn/vendors/bootbox.js"></script>
+<script type="text/javascript">
+    bootbox.setLocale("zh_CN");
+</script>
+<script src="js/app.js"></script>
+<script src="js/login.js"></script>
+<script type="text/javascript">
+    bootbox.setLocale("zh_CN");
+    $.fn.modal.Constructor.prototype.enforceFocus = function () {
+    };
+    $("#logout").on("click", function () {
+        $.ajax(
+            {
+                type: 'GET',
+                url: App.href + "/api/logout",
+                contentType: "application/json",
+                dataType: "json",
+                success: function (result) {
+                    if (result.code === 200) {
+                        $.cookie(App.token_key, null);
+                        window.location.href = App.href + "/login.html";
+                    } else {
+                        alert(result.message);
+                    }
+                }
+            }
+        );
+    });
+
+</script>
+</body>
+</html>
